@@ -15,7 +15,7 @@ RUN npm install
 COPY . /app
 
 # Generate the build of the application
-RUN npm run build -- --output-path=./dist/out
+RUN npm run build -- --prod --output-path=./dist/out
 
 
 # Stage 2: Serve app with nginx server
