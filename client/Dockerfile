@@ -4,15 +4,15 @@
 FROM node:14.16 as builder
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /app/
 
 # Add the source code to app
-COPY package*.json /app
+COPY package*.json /app/
 
 # Install all the dependencies
 RUN npm install
 
-COPY . /app
+COPY ./ /app/
 
 # Generate the build of the application
 RUN npm run build -- --prod --output-path=./dist/out
